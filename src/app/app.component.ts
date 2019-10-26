@@ -30,6 +30,7 @@ export class AppComponent implements OnInit {
   showCaptions: boolean = true;
   captionColor: string = '#FFF';
   captionBackground: string = 'rgba(0, 0, 0, .35)';
+  fullscreenBackground: string = 'white';
   lazyLoad: boolean = false;
   hideOnNoSlides: boolean = false;
   width: string = '100%';

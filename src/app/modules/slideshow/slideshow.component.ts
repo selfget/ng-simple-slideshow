@@ -46,6 +46,7 @@ export class SlideshowComponent implements OnInit, DoCheck, OnChanges, OnDestroy
   @Input() showCaptions: boolean = true;
   @Input() captionColor: string = '#FFF';
   @Input() captionBackground: string = 'rgba(0, 0, 0, .35)';
+  @Input() fullscreenBackground: string = 'white';
   @Input() lazyLoad: boolean = false;
   @Input() hideOnNoSlides: boolean = false;
   @Input() fullscreen: boolean = false;
@@ -538,11 +539,9 @@ export class SlideshowComponent implements OnInit, DoCheck, OnChanges, OnDestroy
   private setStyles(): void {
     if (this.fullscreen) {
       this._renderer.setStyle(this.container.nativeElement, 'height', '100%');
-      // Would be nice to make it configurable
-      this._renderer.setStyle(this.container.nativeElement, 'background-color', 'white');
+      this._renderer.setStyle(this.container.nativeElement, 'background-color', this.fullscreenBackground);
     }
     else {
-      // Would be nice to make it configurable
       this._renderer.removeStyle(this.container.nativeElement, 'background-color');
       if (this.height) {
         this._renderer.setStyle(this.container.nativeElement, 'height', this.height);

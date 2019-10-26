@@ -32,7 +32,7 @@ class State {
 export class PointerService {
   // private _renderer: Renderer2;
 
-  //options
+  // options
   private _disableSwiping = false;
   private _enableZoom = false;
   private _enablePan = false;
